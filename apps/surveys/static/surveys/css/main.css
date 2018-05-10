@@ -1,0 +1,44 @@
+*{
+    margin:0px;
+    padding:0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+}
+
+.wrapper{
+    width: 970px;
+    margin:auto;
+    padding:20px;
+}
+
+p, h1{
+    width:400px;
+    padding:20px;
+    margin:auto auto 30px auto;
+    background-color: darkolivegreen;
+    border:1px solid black;
+    color:whitesmoke;
+    text-align: center;
+}
+
+h2{
+    color:gray;
+    font-style: italic;
+    margin-bottom:20px;
+    text-decoration: underline;
+}
+
+form{
+    width:400px;
+    margin:auto;
+    padding:30px;
+}
+
+.info{
+    width:600px;
+    border:1px solid silver;
+}
+
+.info button{
+    margin-top:30px;
+}

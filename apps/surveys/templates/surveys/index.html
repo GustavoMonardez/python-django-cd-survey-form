@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Survey Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'surveys/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'surveys/css/main.css' %}">
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Survey Form</h1>
+        <form action="/process" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="name">Your name:</label>
+                <input type="text" name="name" class="form-control" value="{{request.session.name}}">
+            </div>
+            <div class="form-group">
+                <label for="location">Dojo Location</label>
+                <select name="location" class="form-control" selected="Seattle">
+                    <option value="Select Location">Select Location</option>
+                    <option value="Seattle">Seattle</option>
+                    <option value="San Jose">San Jose</option>
+                    <option value="New York">New York</option>
+                    <option value="Silicon Valley">Silicon Valley</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="language">Favorite Language</label>
+                <select name="language" class="form-control">
+                    <option value="Select Language">Select Language</option>
+                    <option value="Python">Python</option>
+                    <option value="Java">Java</option>
+                    <option value="C#">C#</option>
+                    <option value="Javascript">Javascript</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="comment">Comment (optional):</label>
+                <textarea name="comment" class="form-control" cols="30" rows="5">{{request.session.comment}}</textarea>
+            </div>
+            <button type="submit" class="btn btn-primary float-right">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
